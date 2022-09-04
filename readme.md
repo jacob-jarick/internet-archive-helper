@@ -24,9 +24,24 @@ note: leading and trailing whitespaces not handled.
 
 # Example
 
+using archive https://archive.org/details/drawingmadeeasyh00lutz
+
 inputlist.txt:
-<pre>TripDown1905_512kb.mp4
-TripDown1905.ogv</pre>
+<pre>
+drawingmadeeasyh00lutz.pdf
+drawingmadeeasyh00lutz_bw.pdf
+drawingmadeeasyh00lutz_jp2.zip
+</pre>
 
 command:
-<pre>ia_helper.sh TripDown1905 inputlist.txt</pre>
+<pre>ia_helper.sh drawingmadeeasyh00lutz inputlist.txt</pre>
+
+# Notes
+
+Archive name is in the url, eg https://archive.org/details/**drawingmadeeasyh00lutz**
+
+List of files can be viewed by clicking "SHOW ALL" under "DOWNLOAD OPTIONS"
+
+# Reference
+
+https://archive.org/services/docs/api/internetarchive/cli.html
