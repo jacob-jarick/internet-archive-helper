@@ -7,8 +7,9 @@ PREFIX=$3 # optional internet archive directory prefix
 # if PREFIX is defined do some sanitizing
 if [ ! -z "$PREFIX" ];
   then
+    PREFIX=$PREFIX/;                          # Add / to end of dir prefix
+    PREFIX=$(echo $PREFIX | tr -s /);         # swap '//' for '/'
     PREFIX=$(echo $PREFIX | sed 's/^\///');   # remove (if exists) / from start of PREFIX
-    PREFIX=$(echo $PREFIX/ | tr -s /);        # Add / to end of dir prefix and swap '//' for '/'
 fi
 
 # grep ARGUMENTS
