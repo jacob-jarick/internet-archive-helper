@@ -26,4 +26,5 @@ inputlist.txt:
 <pre>TripDown1905_512kb.mp4
 TripDown1905.ogv</pre>
 
+command:
 <pre>ia_helper.sh TripDown1905 inputlist.txt</pre>
