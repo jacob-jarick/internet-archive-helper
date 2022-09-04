@@ -3,4 +3,4 @@
 ARCHIVE=$1
 FILE=$2
 
-grep -v -e '^\s*$' $FILE | xargs -0 -d'\n' -I{} ia download $ARCHIVE {}
+grep -v '^\s*$' $FILE | xargs -d'\n' -I{} ia download $ARCHIVE {}
