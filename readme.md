@@ -16,7 +16,7 @@ python implemention
 <pre>ia_helper.py archive inputlist.txt</pre>
 
 ## ia_helper.sh
-shell script implementation using grep and xargs
+shell script implementation using grep and parallel (previously xargs)
 
 note: leading and trailing whitespaces not handled.
 
