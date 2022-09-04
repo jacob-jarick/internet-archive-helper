@@ -2,10 +2,7 @@
 use strict;
 use warnings;
 
-if(scalar @ARGV != 2)
-{
-  die "usage: ia_helper.pl archive inputfile.txt";
-}
+die "usage: ia_helper.pl archive inputfile.txt" if scalar @ARGV != 2;
 
 my ($archive, $file) = @ARGV;
 

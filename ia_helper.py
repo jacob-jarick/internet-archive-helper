@@ -8,7 +8,7 @@ if len(sys.argv) != 3:
   print ('usage: ia_helper.py archive input_file.txt')
   sys.exit()
 
-r = re.compile(r"^\s+|\n+|\r+")
+r = re.compile(r"^\s+|\s+$")
 
 with open(sys.argv[2]) as file:
     for line in file:
