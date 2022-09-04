@@ -5,6 +5,14 @@ All 3 scripts perform the same actions, just implemented in different languages.
 
 The idea being I can simple keep a inputlist.txt in the parent directory and update as needed.
 
+## ia_helper.sh
+
+**FASTEST** now that it makes use of gnu parallel
+
+shell script implementation using grep and parallel (previously xargs)
+
+<pre>ia_helper.sh archive inputlist.txt</pre>
+
 ## ia_helper.pl
 perl implementation
 
@@ -14,13 +22,6 @@ perl implementation
 python implemention
 
 <pre>ia_helper.py archive inputlist.txt</pre>
-
-## ia_helper.sh
-shell script implementation using grep and parallel (previously xargs)
-
-note: leading and trailing whitespaces not handled.
-
-<pre>ia_helper.sh archive inputlist.txt</pre>
 
 # Example
 
