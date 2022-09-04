@@ -2,11 +2,7 @@
 
 ARCHIVE=$1
 FILE=$2
-
-# old xargs implementation
-#grep -v '^\s*$' $FILE | xargs -d'\n' -I{} ia download $ARCHIVE {}
-
-# new parallel implementation
+PREFIX=$3 # optional internet archive directory prefix
 
 # grep ARGUMENTS
 
@@ -16,9 +12,8 @@ FILE=$2
 # parallel ARGUMENTS
 
 # --line-buffer               show output while working
-# --rpl "{} s:^\s+|\s+$::"    remove leading and trailing whitespaces from entry
+# --trim lr                   remove leading and trailing whitespaces from entry
 # --halt now,fail=1           exit on any error
 # -k                          keep order
 
-grep -v '^\s*$' $FILE | parallel --line-buffer --rpl "{} s:^\s+|\s+$::" --halt now,fail=1 -k ia download $ARCHIVE {}
-
+grep -v -e '^\s*$' -e '^#' $FILE | parallel --line-buffer --trim lr --halt now,fail=1 -k ia download $ARCHIVE "$PREFIX{}"
