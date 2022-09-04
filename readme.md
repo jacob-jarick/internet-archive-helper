@@ -38,7 +38,7 @@ command:
 
 # Notes
 
-Archive name is in the url, eg https://archive.org/details/**drawingmadeeasyh00lutz**
+Archive name is in the url, eg for the URL https://archive.org/details/drawingmadeeasyh00lutz the archive name is **drawingmadeeasyh00lutz**
 
 List of files can be viewed by clicking "SHOW ALL" under "DOWNLOAD OPTIONS"
 
