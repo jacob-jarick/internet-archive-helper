@@ -4,6 +4,13 @@ ARCHIVE=$1
 FILE=$2
 PREFIX=$3 # optional internet archive directory prefix
 
+# if PREFIX is defined do some sanitizing
+if [ ! -z "$PREFIX" ];
+  then
+    PREFIX=$(echo $PREFIX | sed 's/^\///');   # remove (if exists) / from start of PREFIX
+    PREFIX=$(echo $PREFIX/ | tr -s /);        # Add / to end of dir prefix and swap '//' for '/'
+fi
+
 # grep ARGUMENTS
 
 # -v          Exclude matches
