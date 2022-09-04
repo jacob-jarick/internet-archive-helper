@@ -72,6 +72,8 @@ the archive name is **drawingmadeeasyh00lutz**
 
 List of files can be viewed by clicking "SHOW ALL" under "DOWNLOAD OPTIONS"
 
+INPUTLISTFILE - lines starting with # are ignored
+
 # Reference
 
 https://archive.org/services/docs/api/internetarchive/cli.html
