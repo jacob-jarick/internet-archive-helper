@@ -19,3 +19,11 @@ shell script implementation using grep and xargs
 note: leading and trailing whitespaces not handled.
 
 <pre>ia_helper.sh archive inputlist.txt</pre>
+
+# Example
+
+inputlist.txt:
+<pre>TripDown1905_512kb.mp4
+TripDown1905.ogv</pre>
+
+<pre>ia_helper.sh TripDown1905 inputlist.txt</pre>
