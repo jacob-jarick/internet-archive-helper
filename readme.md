@@ -1,7 +1,9 @@
 # ia_helper
 
 Scripts to easily enable downloading a specific set of files from an internet archive by using a text file with a list of names.
-All 3 scripts preform the same actions, just implemented in different languages.
+All 3 scripts perform the same actions, just implemented in different languages.
+
+The idea being I can simple keep a inputlist.txt in the parent directory and update as needed.
 
 ## ia_helper.pl
 perl implementation
