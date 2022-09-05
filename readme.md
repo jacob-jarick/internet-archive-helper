@@ -1,14 +1,12 @@
 # ia_helper
 
-Script to easily enable downloading a specific set of files from an internet archive by using a text file with a list of names.
+Shell script to easily enable downloading a specific set of files from an internet archive by using a text file with a list of names.
 
 The idea being I can simple keep a inputlist.txt in the parent directory and update as needed.
 
-## ia_helper.sh
+Implemtned using grep and parallel
 
-shell script implementation using grep and parallel (previously xargs)
-
-usage:
+# Usage
 <pre>ia_helper.sh INPUTLISTFILE DIRPREFIX</pre>
 
 INPUTLISTFILE - input file named ARCHIVENAME.txt
@@ -27,7 +25,7 @@ drawingmadeeasyh00lutz_jp2.zip
 </pre>
 
 command:
-<pre>ia_helper.sh inputlist.txt</pre>
+<pre>ia_helper.sh drawingmadeeasyh00lutz.txt</pre>
 
 # Example 2
 
