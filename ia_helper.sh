@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REVISION=1
+REVISION=2
 
 echo ""
 echo IA Helper Rev $REVISION
@@ -16,7 +16,7 @@ PREFIX=$2 # optional internet archive directory prefix
 
 # check $FILE exists
 if [[ ! -f $FILE ]]; then
-  echo ERROR: file \"$FILE\" does not exist, exiting
+  echo ERROR: file \""$FILE"\" does not exist, exiting
   exit
 fi
 
@@ -24,15 +24,15 @@ echo "File:    $FILE"
 
 # get archive name from filename
 
-ARCHIVE=$(basename $FILE | sed 's/\.txt$//i')
+ARCHIVE=$(basename "$FILE" | sed 's/\.txt$//i')
 
 echo "Archive: $ARCHIVE"
 
 # if PREFIX is defined do some sanitizing
-if [[ ! -z "$PREFIX" ]]; then
+if [[ -n "$PREFIX" ]]; then
   PREFIX=$PREFIX/;                          # Add / to end of dir prefix
-  PREFIX=$(echo $PREFIX | tr -s /);         # swap '//' for '/'
-  PREFIX=$(echo $PREFIX | sed 's/^\///');   # remove (if exists) / from start of PREFIX
+  PREFIX=$(echo "$PREFIX" | tr -s /);         # swap '//' for '/'
+  PREFIX=$(echo "$PREFIX" | sed 's/^\///');   # remove (if exists) / from start of PREFIX
 
   echo "Dir:     $PREFIX"
 fi
@@ -53,4 +53,4 @@ echo ""
 # --halt now,fail=1   exit on any error
 # -k                  keep order
 
-grep -v -e '^\s*$' -e '^#' $FILE | parallel --jobs 2 --line-buffer --trim lr --halt now,fail=1 -k ia download $ARCHIVE "$PREFIX{}"
+grep -v -e '^\s*$' -e '^#' "$FILE" | parallel --jobs 2 --line-buffer --trim lr --halt now,fail=1 -k ia download "$ARCHIVE" "$PREFIX{}"
