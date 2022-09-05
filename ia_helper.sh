@@ -2,6 +2,7 @@
 
 REVISION=1
 
+echo ""
 echo IA Helper Rev $REVISION
 echo ""
 
