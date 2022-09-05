@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REVISION=2
+REVISION=3
 
 echo ""
 echo IA Helper Rev $REVISION
