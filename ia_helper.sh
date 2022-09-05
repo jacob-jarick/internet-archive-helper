@@ -11,6 +11,13 @@ if [[ -z "$1" ]]; then
   exit
 fi
 
+# set job count
+if [[ -z "$PJOBS" ]]; then
+  echo setting jobs to default value 2
+  echo ""
+  PJOBS=2
+fi
+
 FILE=$1
 PREFIX=$2 # optional internet archive directory prefix
 
@@ -20,13 +27,14 @@ if [[ ! -f $FILE ]]; then
   exit
 fi
 
-echo "File:    $FILE"
+echo "Max Jobs: $PJOBS"
+echo "File:     $FILE"
 
 # get archive name from filename
 
 ARCHIVE=$(basename "$FILE" | sed 's/\.txt$//i')
 
-echo "Archive: $ARCHIVE"
+echo "Archive:  $ARCHIVE"
 
 # if PREFIX is defined do some sanitizing
 if [[ -n "$PREFIX" ]]; then
@@ -34,7 +42,7 @@ if [[ -n "$PREFIX" ]]; then
   PREFIX=$(echo "$PREFIX" | tr -s /);         # swap '//' for '/'
   PREFIX=$(echo "$PREFIX" | sed 's/^\///');   # remove (if exists) / from start of PREFIX
 
-  echo "Dir:     $PREFIX"
+  echo "Dir:      $PREFIX"
 fi
 
 echo ""
@@ -53,4 +61,4 @@ echo ""
 # --halt now,fail=1   exit on any error
 # -k                  keep order
 
-grep -v -e '^\s*$' -e '^#' "$FILE" | parallel --jobs 2 --line-buffer --trim lr --halt now,fail=1 -k ia download "$ARCHIVE" "$PREFIX{}"
+grep -v -e '^\s*$' -e '^#' "$FILE" | parallel --jobs "$PJOBS" --line-buffer --trim lr --halt now,fail=1 -k ia download "$ARCHIVE" "$PREFIX{}"
