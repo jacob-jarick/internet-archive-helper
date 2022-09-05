@@ -15,6 +15,12 @@ ARCHIVENAME - Name of internet archive
 
 DIRPREFIX - optional directory prefix for archives where the files you wish to download are all stored under the same sub directory
 
+## Optional Overrides
+
+parallel jobs, default 2 can be changed by setting env variable PJOBS
+
+<pre>export PJOBS=1</pre>
+
 # Example 1
 
 using archive https://archive.org/details/drawingmadeeasyh00lutz
