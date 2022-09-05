@@ -11,6 +11,8 @@ Implemtned using grep and parallel
 
 INPUTLISTFILE - input file named ARCHIVENAME.txt
 
+ARCHIVENAME - Name of internet archive
+
 DIRPREFIX - optional directory prefix for archives where the files you wish to download are all stored under the same sub directory
 
 # Example 1
