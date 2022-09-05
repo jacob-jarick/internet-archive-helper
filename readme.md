@@ -62,13 +62,25 @@ command:
 
 # Notes
 
+## IA CLI tool
+
+must be installed in bin path
+
+eg: /usr/local/bin/ia
+
+## Archive Name
+
 Archive name is in the url
 
 eg for the URL https://archive.org/details/drawingmadeeasyh00lutz
 
 the archive name is **drawingmadeeasyh00lutz**
 
+## Archive File List
+
 List of files can be viewed by clicking "SHOW ALL" under "DOWNLOAD OPTIONS"
+
+## Input File
 
 INPUTLISTFILE - lines starting with # are ignored
 
