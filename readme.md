@@ -4,7 +4,13 @@ Shell script to easily enable downloading a specific set of files from an intern
 
 The idea being I can simple keep a inputlist.txt in the parent directory and update as needed.
 
-Implemtned using grep and parallel
+Implemented using grep and parallel
+
+# making an inputlist
+
+<pre>ia list the-3do-company-3do-1g1r-chd-perfect-collection > the-3do-company-3do-1g1r-chd-perfect-collection.txt</pre>
+
+note input list name must match collection name with .txt on the end like the above example.
 
 # Usage
 <pre>ia_helper.sh INPUTLISTFILE DIRPREFIX</pre>
@@ -23,6 +29,20 @@ parallel jobs, default 2 can be changed by setting env variable PJOBS
 
 # Example 1
 
+<pre>
+
+# change to dest directory
+cd /mnt/super/Roms/3do
+
+# generate items list (optionally edit items list to remove unwanted files)
+ia list the-3do-company-3do-1g1r-chd-perfect-collection > the-3do-company-3do-1g1r-chd-perfect-collection.txt
+
+# fetch
+/home/mem/bin/ia_helper.sh the-3do-company-3do-1g1r-chd-perfect-collection.txt
+</pre>
+
+# Example 2
+
 using archive https://archive.org/details/drawingmadeeasyh00lutz
 
 drawingmadeeasyh00lutz.txt:
@@ -35,7 +55,7 @@ drawingmadeeasyh00lutz_jp2.zip
 command:
 <pre>ia_helper.sh drawingmadeeasyh00lutz.txt</pre>
 
-# Example 2
+# Example 3
 
 note: this example uses the optional prefix argument
 
@@ -50,9 +70,9 @@ Interactive Multi-Game Demo Disk - April 2003 (Australia) (En,Fr,De,Es,It).rvz
 command:
 <pre>ia_helper.sh rvz-gc-europe-redump.txt RVZ-GC-EUROPE-REDUMP/</pre>
 
-# Example 3
+# Example 4
 
-note: same as example 2 but no prefix argument is used
+note: same as example 3 but no prefix argument is used
 
 using archive https://archive.org/details/rvz-gc-europe-redump
 
